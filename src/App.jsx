@@ -1,10 +1,14 @@
+import Header  from './components/Header';
+import Main  from './components/Main';
 
 function App() {
+  
   return (
-    <div className="w-[400px] h-[400px] bg-green-300 p-4 text-white">
-      <h1 className="font-[200]">resume</h1>
-      <p>name</p>
-    </div>
+    <>
+    <Header />
+    <hr className='h-[3px] bg-accent' />
+    <Main />
+    </>
   )
 }
 
