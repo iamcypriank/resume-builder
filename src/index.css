@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
  
 @theme{
   --font-unbounded : "Unbounded", sans-serif;
   --font-poppins : "Poppins", sans-serif;
+  --font-inter : "Inter", sans-serif;
   --color-primarybg : #000000;
   --color-btnbg : #2E47D6;
   --color-accent : #131313;
   --color-accent2 : #2C2C2C;
+  --color-bgaccent  : #3C5BDE;
   --text-btn : .875rem;
+}
+html,body{
+  background-color: #000000;
 }
 
 @layer base{
@@ -20,8 +26,14 @@
   input{
     @apply bg-accent2 p-2 rounded-md border-2 border-accent ;
   }
+  form{
+    @apply p-[1rem] flex flex-col gap-2;
+  }
+
+
+  textarea{
+     @apply bg-accent2 p-2 rounded-md border-2 border-accent ;
+  }
 }
-
-
 
 

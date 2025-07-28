@@ -3,25 +3,29 @@ import Option from "./Option";
 export default function Aside({ options , updateOptions }){
     function handle(key){
         const temp = {
-            personalinfo : false,
+            personalData : false,
             education : false,
             techskills : false,
             softskills : false,
-            language : false
+            language : false,
+            experience : false,
+            projects : false,
+            achivements: false,
         }
-        updateOptions({...temp,[key] : true })
+        updateOptions({...temp, [key] : true })
     }
 
     return (
         <aside 
         className="flex flex-col">
             <div onClick={()=>{
-                handle('personalinfo')
+                handle('personalData')
             }}>
+                
                 <Option 
                 name="Personal Information" 
                 img="src/assets/personal.svg"
-                show={options.personalinfo} />
+                show={options.personalData} />
             </div>
 
             <div onClick={()=>{
@@ -57,7 +61,44 @@ export default function Aside({ options , updateOptions }){
                 <Option 
                 name="Languages" 
                 img="src/assets/languages.svg" 
-                show={options.language} />
+                show={options
+                .language} />
+            </div>
+
+             <div onClick={()=>{
+                handle('experience')
+            }}>
+                <Option 
+                name="Experience" 
+                img="src/assets/achivement.svg"
+                show={options.experience} />
+            </div>
+
+            <div onClick={()=>{
+                handle('projects')
+            }}>
+                <Option 
+                name="Projects" 
+                img="src/assets/project.svg" 
+                show={options.projects} />
+            </div>
+
+             <div onClick={()=>{
+                handle('certifications')
+            }}>
+                <Option 
+                name="Certifications" 
+                img="src/assets/certificate.svg" 
+                show={options.certifications} />
+            </div>
+
+            <div onClick={()=>{
+                handle('achivements')
+            }}>
+                <Option 
+                name="Achivements" 
+                img="src/assets/achivement.svg"
+                show={options.achivements} />
             </div>
 
         </aside>
