@@ -42,19 +42,21 @@ export default function Main({ showDonation , setShowDonation ,   data , updateD
             {
                 !show ?
                 <div className="sm:hidden mb-2 flex justify-end">
-                    <Button 
+                    <button 
+                    className="h-[3em] px-[1em] bg-btnbg rounded-md "
                     type="button" handle={function(){
                     setShow(prev => !prev);
                 }} ><img 
-                className="h-[16px]" src={menuIcon}alt="Icon" /></Button>
+                className="h-[16px]" src={menuIcon}alt="Icon" /></button>
                 </div> :
 
                 <div className="sm:hidden mb-2 flex justify-end">
-                    <Button 
+                    <button
+                    className="h-[3em] px-[1em] bg-btnbg rounded-md "
                 type="button" handle={function(){
                     setShow(prev => !prev);
                 }} ><img 
-                className="h-[16px]" src={closeIcon} alt="" /></Button>
+                className="h-[16px]" src={closeIcon} alt="" /></button>
                 </div>
             }
             { show && <motion.div 
