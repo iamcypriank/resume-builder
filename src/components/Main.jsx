@@ -44,7 +44,7 @@ export default function Main({ showDonation , setShowDonation ,   data , updateD
                 <div className="sm:hidden mb-2 flex justify-end">
                     <button 
                     className="h-[3em] px-[1em] bg-btnbg rounded-md "
-                    type="button" handle={function(){
+                    onClick={function(){
                     setShow(prev => !prev);
                 }} ><img 
                 className="h-[16px]" src={menuIcon}alt="Icon" /></button>
@@ -53,7 +53,7 @@ export default function Main({ showDonation , setShowDonation ,   data , updateD
                 <div className="sm:hidden mb-2 flex justify-end">
                     <button
                     className="h-[3em] px-[1em] bg-btnbg rounded-md "
-                type="button" handle={function(){
+                    onClick={function(){
                     setShow(prev => !prev);
                 }} ><img 
                 className="h-[16px]" src={closeIcon} alt="" /></button>
