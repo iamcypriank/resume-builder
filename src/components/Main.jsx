@@ -7,10 +7,12 @@ import Project from "./Project";
 import Experience from "./Experience";
 import Button from "./Button";
 import { motion } from "motion/react";
-import menuIcon from "../assets/menu.svg"
-import closeIcon from "../assets/close.svg"
+import menuIcon from "../assets/menu.svg";
+import closeIcon from "../assets/close.svg";
+import qrCode from "../assets/qrcode.jpeg";
+import upiLogo from "../assets/UPI-Logo.png";
 
-export default function Main({   data , updateData }){
+export default function Main({ showDonation , setShowDonation ,   data , updateData }){
 
     const [ show , setShow ] = useState(false);
     const [ options , updateOptions ] = useState(
@@ -35,7 +37,7 @@ export default function Main({   data , updateData }){
 
     return (
         <main 
-        className="text-white m-[1rem] grid grid-cols-[1fr_3fr] max-lg:grid-cols-[auto_3fr] max-sm:flex max-sm:flex-col ">
+        className=" text-white m-[1rem] grid grid-cols-[1fr_3fr] max-lg:grid-cols-[auto_3fr] max-sm:flex max-sm:flex-col ">
             
             {
                 !show ?
@@ -129,6 +131,32 @@ export default function Main({   data , updateData }){
                 updateData={updateData} />}
 
             </div>
+            { showDonation && 
+            <motion.div 
+            initial={{opacity : 0 ,scale : 0}}
+            animate={{opacity : 1 ,scale : 1}}
+            transition={{duration : 0.15}}
+            className="flex flex-col gap-2 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded-md">
+                <img
+                className="h-auto w-[200px]"
+                    src={qrCode} 
+                    alt="icon" />
+                <div className="flex ">
+                    <img 
+                    className="h-[16px]"
+                    src={upiLogo} 
+                    alt="" />
+                    <p 
+                className="text-[#727374] font-medium text-[12px]">cypriank@fifederal</p>
+                </div>
+                <Button 
+                type="button"
+                handle={()=>{
+                    setShowDonation(false);
+                }} >Close</Button>
+                    
+
+            </motion.div > }
         </main>
     )
 }
