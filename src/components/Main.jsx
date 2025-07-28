@@ -7,6 +7,8 @@ import Project from "./Project";
 import Experience from "./Experience";
 import Button from "./Button";
 import { motion } from "motion/react";
+import menuIcon from "../assets/menu.svg"
+import closeIcon from "../assets/close.svg"
 
 export default function Main({   data , updateData }){
 
@@ -42,7 +44,7 @@ export default function Main({   data , updateData }){
                     type="button" handle={function(){
                     setShow(prev => !prev);
                 }} ><img 
-                className="h-[16px]" src="src/assets/menu.svg" alt="" /></Button>
+                className="h-[16px]" src={menuIcon}alt="Icon" /></Button>
                 </div> :
 
                 <div className="sm:hidden mb-2 flex justify-end">
@@ -50,7 +52,7 @@ export default function Main({   data , updateData }){
                 type="button" handle={function(){
                     setShow(prev => !prev);
                 }} ><img 
-                className="h-[16px]" src="src/assets/close.svg" alt="" /></Button>
+                className="h-[16px]" src={closeIcon} alt="" /></Button>
                 </div>
             }
             { show && <motion.div 

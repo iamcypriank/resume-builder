@@ -1,4 +1,16 @@
 import Option from "./Option";
+import PersonalInformationForm from "./PersonalInformationForm";
+
+import personalInformationIcon from "../assets/personal.svg";
+import educationIcon from "../assets/education.svg";
+import technicalskillsIcon from "../assets/technicalskills.svg";
+import softskillsIcon from "../assets/softskills.svg";
+import languageIcon from "../assets/languages.svg";
+import experienceIcon from "../assets/job.svg";
+import projectIcon from "../assets/project.svg";
+import certificateIcon from "../assets/certificate.svg";
+import achivementIcon from "../assets/achivement.svg";
+
 
 export default function Aside({ options , updateOptions }){
     function handle(key){
@@ -25,7 +37,7 @@ export default function Aside({ options , updateOptions }){
                 
                 <Option 
                 name="Personal Information" 
-                img="src/assets/personal.svg"
+                img={personalInformationIcon}
                 show={options.personalData} />
             </div>
 
@@ -34,7 +46,7 @@ export default function Aside({ options , updateOptions }){
             }}>
                 <Option 
                 name="Education" 
-                img="src/assets/education.svg"
+                img={educationIcon}
                 show={options.education} />
             </div>
 
@@ -43,7 +55,7 @@ export default function Aside({ options , updateOptions }){
             }}>
                 <Option 
                 name="Technical Skills" 
-                img="src/assets/technicalskills.svg" 
+                img={technicalskillsIcon} 
                 show={options.techskills} />
             </div>
 
@@ -52,7 +64,7 @@ export default function Aside({ options , updateOptions }){
             }}>
              <Option 
              name="Soft Skills" 
-             img="src/assets/softskills.svg" 
+             img={softskillsIcon}
              show={options.softskills} />
            </div>
 
@@ -61,17 +73,17 @@ export default function Aside({ options , updateOptions }){
             }}>
                 <Option 
                 name="Languages" 
-                img="src/assets/languages.svg" 
+                img={languageIcon}
                 show={options
                 .language} />
             </div>
 
              <div onClick={()=>{
                 handle('experience')
-            }}>
+            }}> 
                 <Option 
                 name="Experience" 
-                img="src/assets/job.svg"
+                img={experienceIcon}
                 show={options.experience} />
             </div>
 
@@ -80,7 +92,7 @@ export default function Aside({ options , updateOptions }){
             }}>
                 <Option 
                 name="Projects" 
-                img="src/assets/project.svg" 
+                img={projectIcon}
                 show={options.projects} />
             </div>
 
@@ -89,7 +101,7 @@ export default function Aside({ options , updateOptions }){
             }}>
                 <Option 
                 name="Certifications" 
-                img="src/assets/certificate.svg" 
+                img={certificateIcon}
                 show={options.certifications} />
             </div>
 
@@ -98,7 +110,7 @@ export default function Aside({ options , updateOptions }){
             }}>
                 <Option 
                 name="Achivements" 
-                img="src/assets/achivement.svg"
+                img={achivementIcon}
                 show={options.achivements} />
             </div>
 
