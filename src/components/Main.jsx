@@ -41,14 +41,16 @@ export default function Main({   data , updateData }){
                     <Button 
                     type="button" handle={function(){
                     setShow(prev => !prev);
-                }} ><img className="h-[16px]" src="src/assets/menu.svg" alt="" /></Button>
+                }} ><img 
+                className="h-[16px]" src="src/assets/menu.svg" alt="" /></Button>
                 </div> :
 
                 <div className="sm:hidden mb-2 flex justify-end">
                     <Button 
                 type="button" handle={function(){
                     setShow(prev => !prev);
-                }} >Close</Button>
+                }} ><img 
+                className="h-[16px]" src="src/assets/close.svg" alt="" /></Button>
                 </div>
             }
             { show && <motion.div 
