@@ -79,7 +79,7 @@ export default function Experience({ data , updateData }){
                 }}
                 required /></label>
                 <div className="flex flex-col gap-2">
-                    <div className="flex gap-4 ">
+                    <div className="flex gap-4 max-sm:flex-col">
                         <label htmlFor="" className=" flex gap-2 ">Start<input 
                     type="month"
                     value={experience.start}
@@ -149,7 +149,7 @@ export default function Experience({ data , updateData }){
             </form>
             
             {/* renders experience */}
-             <div className="grid grid-cols-[1fr_1fr] gap-8 m-4">
+             <div className="grid grid-cols-[1fr_1fr] gap-8 m-4 max-lg:flex max-lg:flex-col">
                 {data && data.length!=0 ?
                    data.map(( item )=>{
                         return (

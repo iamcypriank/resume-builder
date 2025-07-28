@@ -19,6 +19,7 @@ export default function Aside({ options , updateOptions }){
         <aside 
         className="flex flex-col">
             <div onClick={()=>{
+                
                 handle('personalData')
             }}>
                 
@@ -70,7 +71,7 @@ export default function Aside({ options , updateOptions }){
             }}>
                 <Option 
                 name="Experience" 
-                img="src/assets/achivement.svg"
+                img="src/assets/job.svg"
                 show={options.experience} />
             </div>
 

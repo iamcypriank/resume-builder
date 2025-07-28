@@ -10,11 +10,18 @@ export default function Preview({ data, setShowPreview }) {
   return (
     <motion.div
     initial={{scale:0 , opacity : 0}}
-    animate={{ scale: 0.8 , opacity : 1 }}
-    className="resume-container print:bg-white flex justify-center gap-4">
+    animate={{ scale: 1 , opacity : 1 }}
+    className=" resume-container print:bg-white flex  gap-4 flex-col-reverse items-center">
       <div
         id="resume-preview"
-        className="font-inter p-[40px] min-h-[1123px] w-[794px] bg-white"
+        className="
+        max-[380px]:scale-40
+        max-[430px]:scale-45
+        max-[530px]:scale-50
+        max-[625px]:scale-60
+        max-[700px]:scale-70
+        max-[850px]:scale-80
+        origin-top font-inter p-[40px] min-h-[1123px] w-[794px] bg-white"
       >
         <div>
           {data.personalData.fname !== "" && (

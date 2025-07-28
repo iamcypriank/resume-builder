@@ -99,7 +99,7 @@ export default function Education({ data , updateData }){
             </div> 
                             
         </form>
-        <div className="grid grid-cols-[1fr_1fr] gap-8 m-4 ">
+        <div className="grid grid-cols-[1fr_1fr] gap-8 m-4 max-lg:flex max-lg:flex-col ">
             { data && data.length!=0 ?
              data.map((item)=>{
                 return (<motion.div

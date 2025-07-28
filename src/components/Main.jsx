@@ -5,10 +5,12 @@ import Education from "./Education";
 import Skills from "./Skills";
 import Project from "./Project"; 
 import Experience from "./Experience";
+import Button from "./Button";
+import { motion } from "motion/react";
 
-export default function Main({ data , updateData }){
-    
+export default function Main({   data , updateData }){
 
+    const [ show , setShow ] = useState(false);
     const [ options , updateOptions ] = useState(
         {
             personalData : true,
@@ -31,10 +33,38 @@ export default function Main({ data , updateData }){
 
     return (
         <main 
-        className="text-white m-[1rem] grid grid-cols-[1fr_3fr]">
-            <Aside 
+        className="text-white m-[1rem] grid grid-cols-[1fr_3fr] max-lg:grid-cols-[auto_3fr] max-sm:flex max-sm:flex-col ">
+            
+            {
+                !show ?
+                <div className="sm:hidden mb-2 flex justify-end">
+                    <Button 
+                    type="button" handle={function(){
+                    setShow(prev => !prev);
+                }} ><img className="h-[16px]" src="src/assets/menu.svg" alt="" /></Button>
+                </div> :
+
+                <div className="sm:hidden mb-2 flex justify-end">
+                    <Button 
+                type="button" handle={function(){
+                    setShow(prev => !prev);
+                }} >Close</Button>
+                </div>
+            }
+            { show && <motion.div 
+            initial={{opacity : 0 ,scale : 0 , y : -500}}
+            animate={{opacity : 1,scale : 1 , y : 0 }}
+            transition={{duration : .15}}
+            exit={{ opacity : 0 , y : -500 , transition : {duration : .15}}}
+            className=" block sm:hidden"><Aside
             updateOptions={updateOptions} 
-            options={options} />
+            options={options} /></motion.div> } 
+            
+
+            <div className="max-sm:hidden">
+                <Aside updateOptions={updateOptions} options={options} />
+            </div>
+            
             <div 
             className="m-[1rem] border-2 border-accent">
                 {/* personal information form */}

@@ -10,6 +10,7 @@ export default function Header({ setShowPreview }) {
   }
 
   function handleDownload() {
+  setShowPreview(true);
   const element = document.getElementById("resume-preview");
   if (!element) return;
 
@@ -46,14 +47,18 @@ export default function Header({ setShowPreview }) {
 
   return (
     <header className="flex justify-between p-4">
-      <h1 className="font-unbounded text-white text-2xl font-bold">Resume Builder</h1>
-
+      <h1 className="font-unbounded text-white text-2xl font-bold max-[500px]:hidden">Resume Builder</h1>
+      <p
+      className="font-unbounded text-white text-2xl font-bold hidden max-[500px]:block" 
+      >RBuilder</p>
       <div 
       
       className="flex gap-4">
-        <Button handle={handleShow} type="button">
-          Preview
-        </Button>
+        
+          <Button handle={handleShow} type="button">
+            Preview
+          </Button>
+        
 
         <Button type="button" handle={handleDownload}>
           Generate

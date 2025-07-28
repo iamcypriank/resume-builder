@@ -29,10 +29,7 @@ function App() {
   
   return (
     <>
-    <div className=' h-screen w-screen lg:hidden p-[5rem] flex justify-center items-center'>
-    <p className='text-white text-[2rem]'>please use device with screen size greater than 1023px  ex - Large Tablet , Laptop , Desktop  </p>
-    </div>
-    <div className=' hidden lg:block'>
+    <div className=''>
     <Header 
     showPreview={showPreview}
     setShowPreview={setShowPreview} />

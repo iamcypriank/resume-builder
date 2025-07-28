@@ -106,7 +106,7 @@ export default function Project({ updateData , data }){
             </form>
 
             {/* renders the list */}
-            <div className="grid grid-cols-[1fr_1fr] gap-8 m-4">
+            <div className="grid grid-cols-[1fr_1fr] gap-8 m-4 max-lg:flex max-lg:flex-col">
                 {data && data.length!=0 ?
                 data.map(( item )=>{
                     return (
@@ -115,7 +115,7 @@ export default function Project({ updateData , data }){
                         animate={{scale : 1}} 
                         transition={{duration : 0.2}}
                         exit={{scale:0 , transition : {duration : 0.2}}}
-                        key={item.title} className=" relative bg-[rgba(64,226,172,0.1)] text-green-400 h-auto p-4 rounded-xl flex flex-col items-start">
+                        key={item.title} className="relative bg-[rgba(64,226,172,0.1)] text-green-400 h-auto p-4 rounded-xl flex flex-col items-start">
                             <h2 className="text-[1.25rem]  font-bold">{item.title}</h2>
                             <p > <b className="font-medium">Tech Stack</b>: {item.techstack}</p>
                             <p> <b className="font-medium">Description</b>: {item.description}</p>
@@ -125,13 +125,12 @@ export default function Project({ updateData , data }){
                                 return <li key={item}>{item}</li>
                             })}
                             </ul>
-                            <div>
+                            <div className="absolute top-4 right-4">
                                 <Button type="delete" handle={function(){
                                     const updated = data.filter((current)=> current.title!=item.title);
                                     updateData(prev => ({...(prev||{}),projects : updated}));
                                 }} />
-                            </div>
-                            
+                            </div>                          
                         </motion.div>
                     )
                 }) 
